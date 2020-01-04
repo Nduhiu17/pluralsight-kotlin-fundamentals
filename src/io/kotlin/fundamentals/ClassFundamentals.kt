@@ -15,6 +15,12 @@ class Student(val id: Int ): Person(){
     override fun getName(): String {
         return super.getName()
     }
+
+    fun enroll(courseName:String){
+        val course = Courses.allCourses
+                .filter { it.title == courseName }
+                .firstOrNull()
+    }
 }
 
 sealed class PersonEvent {
